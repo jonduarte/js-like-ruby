@@ -4,7 +4,7 @@
     <script type="text/javascript" src="../lib/util.js" ></script>
     <script type="text/javascript">
 
-      console.group("Testing with numbers");
+      console.group("Testing each with numbers");
 
       [1, 2, 3, 4, 5].each(function(i, value){
         console.log("The position: " + i + " contains: " + value);
@@ -14,7 +14,7 @@
 
       //-----------* end numbers test * --------------------//
 
-      console.group("Testing with letters");
+      console.group("Testing each with letters");
 
       ["a", "b", "c", "d", "e"].each(function(i, value){
         console.log("The position: " + i + " contains: " + value);
@@ -24,7 +24,7 @@
 
       //-----------* end test letters * --------------------//
 
-      console.group("Testing with vars");
+      console.group("Testing each with vars");
 
       var x = "Foo";
       var z = "Bar";
@@ -44,6 +44,26 @@
       console.groupEnd();
 
       //-----------* end test vars * --------------------//
+
+
+      console.group("Testing include");
+      console.log("Has the number 1 in array? " +
+        [1, 2, 3].include(1) //should be true
+      );
+
+      console.log("Has the number 0 in array? " +
+        [1, 2, 3].include(0) //should be false
+      );
+
+      console.log("Has the letter 'a' in array? " +
+        ["a", "b", "c"].include("a") //should be true
+      );
+
+      console.log("Has the letter 'd' in array? " +
+        ["a", "b", "c"].include("d") //should be false
+      );
+      console.groupEnd();
+
 
     </script>
   </head>
