@@ -1,0 +1,54 @@
+<html>
+  <head>
+    <title>Test Case : Util.js</title>
+    <script type="text/javascript" src="../lib/util.js" ></script>
+    <script type="text/javascript">
+
+      console.group("Testing with numbers");
+
+      [1, 2, 3, 4, 5].each(function(i, value){
+        console.log("The position: " + i + " contains: " + value);
+      });
+
+      console.groupEnd();
+
+      //-----------* end numbers test * --------------------//
+
+      console.group("Testing with letters");
+
+      ["a", "b", "c", "d", "e"].each(function(i, value){
+        console.log("The position: " + i + " contains: " + value);
+      });
+
+      console.groupEnd();
+
+      //-----------* end test letters * --------------------//
+
+      console.group("Testing with vars");
+
+      var x = "Foo";
+      var z = "Bar";
+      var k = { foo: x, bar: z};
+
+      [x, z, k].each(function(i, value){
+        console.log("The position: " + i + " contains: " + value);
+        if(typeof(value) == "object"){
+          console.group("Object properties");
+          for(var props in value){
+            console.log("Property name: " + props + " , property value: " + value[props]);
+          }
+          console.groupEnd();
+        }
+      });
+
+      console.groupEnd();
+
+      //-----------* end test vars * --------------------//
+
+    </script>
+  </head>
+  <body>
+    <p>* you need firebug to see the result.
+  </body>
+</html>
+
