@@ -37,6 +37,11 @@ $(document).ready(function(){
     ok([1, 2].all());
   })
 
+  test("#uniq", function(){
+    var array = [1, 2, null, 4, 1, 3];
+    deepEqual(array.uniq(), [1, 2, null, 4, 3]);
+  })
+
   module("String");
 
   test("#empty", function(){
@@ -61,5 +66,13 @@ $(document).ready(function(){
   test("#include", function(){
     ok("something".include("some"))
     equal(false, "something".include("any"))
+  })
+
+  test("#truncate", function(){
+    equal("something".truncate(), "something")
+    equal("its is a really big text phrase I think".truncate(), "its is a really big text ph...")
+    equal("its is a really big text phrase I think".truncate(10), "its is ...")
+    equal("its is a really big text phrase I think".truncate(10, "***"), "its is ***")
+    equal("".truncate(10, "***"), "")
   })
 });
