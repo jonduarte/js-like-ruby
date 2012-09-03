@@ -75,4 +75,9 @@ $(document).ready(function(){
     equal("its is a really big text phrase I think".truncate(10, "***"), "its is ***")
     equal("".truncate(10, "***"), "")
   })
+
+  module("Date");
+  test("#today", function(){
+    ok(Date.today() - new Date() == 0);
+  });
 });
