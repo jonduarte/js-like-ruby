@@ -80,6 +80,9 @@ $(document).ready(function(){
   test("#today", function(){
     ok(Date.today() - new Date() == 0);
   });
+  test("#yesterday", function(){
+    ok(Date.yesterday().getDay() == new Date().getDay() - 1);
+  });
 
   module("Number");
   test("#day", function(){
