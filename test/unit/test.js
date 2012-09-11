@@ -80,4 +80,14 @@ $(document).ready(function(){
   test("#today", function(){
     ok(Date.today() - new Date() == 0);
   });
+
+  module("Number");
+  test("#day", function(){
+    ok(1..day() == 86400000);
+    ok(2..day() == ( 2 * 86400000));
+  });
+
+  test("#ago", function(){
+    ok((1).day().ago().getDay() == new Date().getDay() - 1);
+  });
 });
